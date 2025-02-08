@@ -1,6 +1,0 @@
-{
-  "files.associations": {
-    "*.replacements": "markdown"
-  },
-  "typescript.tsdk": "node_modules/typescript/lib"
-}
