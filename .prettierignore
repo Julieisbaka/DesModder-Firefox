@@ -1,7 +1,0 @@
-node_modules
-dist
-dist-ts
-coverage
-*.replacements
-run_calc_for_tests.ts
-state_schema.json
