@@ -2,11 +2,11 @@
  * @type {import('@jest/types').Config.ProjectConfig}
  */
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const config = require("./jest-base.config");
+import config, { testPathIgnorePatterns as _testPathIgnorePatterns } from "./jest-base.config";
 /** @type any */
-module.exports = {
+export default {
   ...config,
-  testPathIgnorePatterns: config.testPathIgnorePatterns.concat("\\.int\\."),
+  testPathIgnorePatterns: _testPathIgnorePatterns.concat("\\.int\\."),
   testEnvironment: "jsdom",
   globalSetup: "./src/tests/setup-unit.js",
 };

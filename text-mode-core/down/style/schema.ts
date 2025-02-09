@@ -180,9 +180,7 @@ export const expression: Schema = {
     rho: boundsSchema,
     phi: boundsSchema,
   }),
-  cdf: boundsSchema,
-  // TODO vizProps
-  // vizProps
+  cdf: boundsSchema
 };
 
 export const regression: Schema = {

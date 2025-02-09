@@ -15,13 +15,7 @@ jobs:
       - name: npm install and build
         run: |
           npm ci
-          node ./esbuild.mjs --browser=chrome --outdir=dist-chrome
           node ./esbuild.mjs --browser=firefox --outdir=dist-ff
-      - name: Upload Chrome
-        uses: actions/upload-artifact@v3
-        with:
-          name: DesModder-Chrome-${{ github.sha }}
-          path: dist-chrome
       - name: Upload Firefox
         uses: actions/upload-artifact@v3
         with:

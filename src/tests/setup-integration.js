@@ -1,14 +1,15 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const { mkdir, writeFile } = require("fs").promises;
-const os = require("os");
-const path = require("path");
-const puppeteer = require("puppeteer");
+import { promises } from "fs";
+const { mkdir, writeFile } = promises;
+import { tmpdir } from "os";
+import { join } from "path";
+import { launch } from "puppeteer";
 
-const DIR = path.join(os.tmpdir(), "jest_puppeteer_global_setup");
+const DIR = join(tmpdir(), "jest_puppeteer_global_setup");
 
-module.exports = async function () {
-  const pathToExtension = path.join(process.cwd(), "dist");
-  const browser = await puppeteer.launch({
+export default async function () {
+  const pathToExtension = join(process.cwd(), "dist");
+  const browser = await launch({
     headless: "new",
     args: [
       `--disable-extensions-except=${pathToExtension}`,
@@ -21,5 +22,5 @@ module.exports = async function () {
 
   // use the file system to expose the wsEndpoint for TestEnvironments
   await mkdir(DIR, { recursive: true });
-  await writeFile(path.join(DIR, "wsEndpoint"), browser.wsEndpoint());
+  await writeFile(join(DIR, "wsEndpoint"), browser.wsEndpoint());
 };

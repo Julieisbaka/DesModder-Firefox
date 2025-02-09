@@ -27,5 +27,8 @@
   "license": "MIT",
   "keywords": [
     "desmos"
-  ]
+  ],
+  "dependencies": {
+    "@desmodder/text-mode-core": "file:"
+  }
 }

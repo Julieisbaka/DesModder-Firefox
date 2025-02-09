@@ -1,5 +1,5 @@
 export async function pollForValue<T>(func: () => T) {
-  return await new Promise<T>((resolve) => {
+  return await new Promise<T>((resolve: (arg0: T & {}) => void) => {
     const interval = setInterval(() => {
       const val = func();
       if (val !== null && val !== undefined) {

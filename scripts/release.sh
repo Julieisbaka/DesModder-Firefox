@@ -21,7 +21,7 @@ echo "Updating package version"
 npm --no-git-tag-version version "$version"
 
 echo "Updating extension version"
-for file in public/{chrome,firefox}/manifest.json; do
+for file in public/{firefox}/manifest.json; do
   jq --arg version "$version" '.version |= $version' "$file" | sponge "$file"
   npx prettier --write "$file"
 done
@@ -31,11 +31,6 @@ perl -pi -e 's/compare\/v\d+\.\d+\.\d+/compare\/v'"${version}"'/g' docs/RELEASE.
 
 git add -A
 git commit -m "Prepare v$version"
-
-echo "Building for Chrome"
-rm -rf dist
-npm run build
-zip -r "DesModder-Chrome-v$version.zip" dist
 
 echo "Building for Firefox"
 rm -rf dist

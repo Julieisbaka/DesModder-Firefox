@@ -9,7 +9,7 @@ If you're looking for in-depth development documentation, see:
 
 ## Setup Environment
 
-1. Remove the existing extension to avoid conflict. If you plan to be editing DesModder, I suggest opening a [separate Chrome profile](https://support.google.com/chrome/answer/2364824) so that you still have the stable extension in your main profile when you need it.
+1. Remove the existing extension to avoid conflict.
 2. Make sure you have `git` and `npm` installed.
 
    - Ensure `node --version` is at least `v18.0.0`. If it isn't, `nvm use 18` should typically fix this.
@@ -18,7 +18,7 @@ If you're looking for in-depth development documentation, see:
 3. Run `git clone https://github.com/DesModder/DesModder` to download the latest commit
 4. Navigate to the directory, then run `npm run init` to setup hooks and install dependencies
 5. Run `npm run build` to build.
-6. Load the unpacked extension in the `dist/` folder through the directions at https://developer.chrome.com/docs/extensions/mv2/getstarted/#manifest (see "load unpacked")
+6. Load the unpacked extension.
 
 ## Making Changes
 

@@ -1,2 +1,2 @@
-declare const BROWSER: "firefox" | "chrome";
+declare const BROWSER: "firefox";
 declare const VERSION: string;

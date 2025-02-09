@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-require-imports */
-const fs = require("fs/promises");
-const path = require("path");
+import { stat, mkdir, writeFile } from "fs/promises";
+import { dirname } from "path";
 
-module.exports = async function () {
+export default async function () {
   const fetch = (await import("node-fetch")).default;
   const SERVER = "https://desmos.com";
   const CACHE_FOLDER = "node_modules/.cache/desmos";
@@ -12,7 +12,7 @@ module.exports = async function () {
 
   const calculatorLink = `${SERVER}/calculator`;
 
-  const stats = await fs.stat(CALC_DESKTOP).catch(() => undefined);
+  const stats = await stat(CALC_DESKTOP).catch(() => undefined);
 
   // download and cache calculator_desktop.js if it doesn't exist already
   // or if it's more than a day old as measured by modified time (mtime).
@@ -47,10 +47,10 @@ module.exports = async function () {
         .replace(/(![01])/g, (v) => `${v}\n`),
     ].join("\n");
 
-    await fs.mkdir(path.dirname(CALC_DESKTOP), {
+    await mkdir(dirname(CALC_DESKTOP), {
       recursive: true,
     });
-    await fs.writeFile(CALC_DESKTOP, reformattedCalculatorDesktop);
+    await writeFile(CALC_DESKTOP, reformattedCalculatorDesktop);
 
     console.log("Download finished.");
   }

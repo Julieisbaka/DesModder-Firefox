@@ -109,7 +109,6 @@ Bug Fixes
 
 Bug Fixes
 
-- Prevent duplicate loading (such as might occur after an update in Firefox).
 - Fix error from non-expression error triangles with hide-errors enabled.
 
 ## 0.13.4
@@ -127,7 +126,6 @@ Fix compatibility error preventing everything from loading.
 
 Bug Fixes
 
-- Fix crash on Firefox <=124.
 - (Video Creator) Fix accidental scrolljacking when 3d scene spins.
 - (Shift-Enter-Newline) Remove plugin since it is a vanilla feature now.
 
@@ -577,10 +575,6 @@ Bug fixes and improvements:
 - (Builtin Settings) Remove lock viewport to avoid duplication
 - (Folder tools) Merge past secret folders
 
-## 0.7.1
-
-This version is released only for Firefox as the first Firefox build.
-
 ## 0.7.0
 
 New features
@@ -697,7 +691,6 @@ Improvements and Bug Fixes:
 
 Improvements and Bug Fixes:
 
-- Save plugin settings in chrome storage
 - Fix two bugs related to the placement of pillbox buttons and popover
 - (Wolfram2Desmos) Initialize immediately, and allow disabling the plugin
 - (Bultin Settings) disable administerSecretFolders by default

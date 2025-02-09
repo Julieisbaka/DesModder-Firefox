@@ -147,8 +147,6 @@ export interface Expression
     phi?: HydratedBounds;
   };
   cdf?: HydratedBounds;
-  // TODO vizProps
-  // vizProps:
 }
 
 export interface Regression extends NonFolderBase {

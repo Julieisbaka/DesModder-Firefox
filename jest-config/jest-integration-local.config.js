@@ -1,9 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const configIntegration = require("./jest-integration.config");
+import configIntegration, { testPathIgnorePatterns as _testPathIgnorePatterns } from "./jest-integration.config";
 /** @type any */
-module.exports = {
+export default {
   ...configIntegration,
-  testPathIgnorePatterns: configIntegration.testPathIgnorePatterns.filter(
+  testPathIgnorePatterns: _testPathIgnorePatterns.filter(
     (e) => e !== "intellisense"
   ),
 };

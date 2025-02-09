@@ -35,7 +35,6 @@ export default function needsParens(path: NodePath): boolean {
   // ||(node.type === "ListComprehension" && !node.bracketWrapped);
 
   switch (parent.type) {
-    // TODO
     case "RepeatedExpression":
       // identifier, start, and end don't need parens
       // TODO: don't need parens sometimes in the expr

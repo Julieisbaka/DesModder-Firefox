@@ -21,9 +21,9 @@ export default class ExprActionButtons extends PluginController<undefined> {
   order() {
     const enabled = Object.keys(this.dsm.enabledPlugins) as PluginID[];
     enabled.sort();
-    return enabled.flatMap((pluginID) =>
+    return enabled.flatMap((pluginID: string | number) =>
       (this.dsm.enabledPlugins[pluginID]!.actionButtons ?? []).map(
-        (eab, i): ActionButtonWithKey => ({
+        (eab: ActionButtonWithKey, i: any): ActionButtonWithKey => ({
           ...eab,
           key: `${pluginID}:${i}`,
         })

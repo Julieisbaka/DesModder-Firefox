@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const fs = require("fs").promises;
-const os = require("os");
-const path = require("path");
+import { promises as fs } from "fs";
+import { tmpdir } from "os";
+import { join } from "path";
 
-const DIR = path.join(os.tmpdir(), "jest_puppeteer_global_setup");
-module.exports = async function () {
+const DIR = join(tmpdir(), "jest_puppeteer_global_setup");
+export default async function () {
   // close the browser instance
   await globalThis.__BROWSER_GLOBAL__.close();
 

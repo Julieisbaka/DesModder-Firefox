@@ -7,7 +7,7 @@ Procedure:
 - If it's actually 1920x1200, run `convert filename.png -resize 66.67% filename.png` to downscale to 1280×800
   - bulk script: `for f in *.png; { convert $f -resize 66.67% $f; }`
 
-Following are the graphs. Nested bullets are alt text (Firefox only):
+Following are the graphs. Nested bullets are alt text:
 
 - GLesmos: https://www.desmos.com/calculator/uum9ixgpgb
   - Utilize the GPU for high-performance plotting of complicated inequalities.

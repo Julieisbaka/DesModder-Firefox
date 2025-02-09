@@ -163,7 +163,6 @@ export async function exportFrames(vc: VideoCreator) {
 
 function download(url: string, filename: string) {
   // https://gist.github.com/SlimRunner/3b0a7571f04d3a03bff6dbd9de6ad729#file-desmovie-user-js-L325
-  // no point supporting anything besides Chrome (no SharedArrayBuffer support)
   const a = document.createElement("a");
   a.href = url;
   a.download = filename;

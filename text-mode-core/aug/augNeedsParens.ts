@@ -17,7 +17,6 @@ export default function augNeedsParens(
     case "Integral":
       return path === "integrand" && power(node) <= POWERS.add;
     case "ListAccess":
-      // weird, index is not threshold
       return path === "list" && power(node) < POWERS.power;
     case "DotAccess":
     case "OrderedPairAccess":

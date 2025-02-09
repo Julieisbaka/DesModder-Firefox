@@ -20,13 +20,11 @@ if (argv.help) {
   
   Options:
     --help         Show help
-    --browser=...  Browser target: "firefox", or "chrome"  [default: "chrome"]
+    --browser=...  Browser target: "firefox"  [default: "firefox"]
     --watch        Watch mode: rebuild on file system changes [default: false]
     --outdir=...   Output directory                          [default: "dist"]
     
   Examples:
-    # Dev server for Chrome
-    node esbuild.mjs --watch --browser=chrome
     
     # Final build for Firefox
     node esbuild.mjs --browser=firefox`
@@ -36,13 +34,12 @@ if (argv.help) {
 
 if (
   argv.browser !== undefined &&
-  !["firefox", "chrome"].includes(argv.browser)
+  !["firefox"].includes(argv.browser)
 ) {
   console.error(`Invalid browser name: ${argv.browser}`);
   process.exit(1);
 }
 const { version } = JSON.parse(await loadFile("./package.json"));
-const browser = argv.browser ?? "chrome";
 const watch = !!argv.watch;
 const outdir = argv.outdir ?? "dist";
 

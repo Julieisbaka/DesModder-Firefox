@@ -112,8 +112,6 @@ export const expression: Hydrated.Expression = {
     r: defaultBounds,
     phi: defaultBounds,
   },
-  // TODO vizProps
-  // vizProps
 } as const;
 
 export const regression: Hydrated.Regression = {
